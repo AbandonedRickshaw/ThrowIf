@@ -109,7 +109,7 @@ namespace AR.ThrowIf
         public static T ThrowIfOutOfRange<T>(this T argument, Exception exception)
             where T : struct, Enum
         {
-            if (!Enum.IsDefined(argument))
+            if (!Enum.IsDefined(typeof(T), argument))
             {
                 throw exception;
             }
@@ -157,8 +157,8 @@ namespace AR.ThrowIf
 		/// <param name="argument">The argument to test</param>
 		/// <param name="condition">The test</param>
 		/// <param name="argumentName">The name of the argument to test</param>
-		public static T ThrowIfTrue<T>(this T argument, Func<T, bool> condition, string? argumentName = "unspecified") =>
-			argument.ThrowIfTrue(condition, new ArgumentException("The argument is invalid.", argumentName));
+		public static T ThrowIf<T>(this T argument, Func<T, bool> condition, string? argumentName = "unspecified") =>
+			argument.ThrowIf(condition, new ArgumentException("The argument is invalid.", argumentName));
 
 		/// <summary>
 		/// Throws an exception if a condition evaluates to TRUE
@@ -168,7 +168,7 @@ namespace AR.ThrowIf
 		/// <param name="condition">The test</param>
 		/// <param name="exception"></param>
 		/// <param name="exception">The exception to throw</param>
-		public static T ThrowIfTrue<T>(this T argument, Func<T, bool> condition, Exception exception) =>
+		public static T ThrowIf<T>(this T argument, Func<T, bool> condition, Exception exception) =>
 			condition(argument) ? throw exception : argument;
 
 		/// <summary>
@@ -178,8 +178,8 @@ namespace AR.ThrowIf
 		/// <param name="argument">The argument to test</param>
 		/// <param name="condition">The test</param>
 		/// <param name="argumentName">The name of the argument to test</param>
-		public static T ThrowIfFalse<T>(this T argument, Func<T, bool> condition, string? argumentName = "unspecified") =>
-			argument.ThrowIfFalse(condition, new ArgumentException("The argument is invalid.", argumentName));
+		public static T ThrowIfNot<T>(this T argument, Func<T, bool> condition, string? argumentName = "unspecified") =>
+			argument.ThrowIfNot(condition, new ArgumentException("The argument is invalid.", argumentName));
 
 		/// <summary>
 		/// Throws an exception if a condition evaluates to FALSE
@@ -189,7 +189,7 @@ namespace AR.ThrowIf
 		/// <param name="condition">The test</param>
 		/// <param name="exception"></param>
 		/// <param name="exception">The exception to throw</param>
-		public static T ThrowIfFalse<T>(this T argument, Func<T, bool> condition, Exception exception) =>
-			condition(argument) ? throw exception : argument;
+		public static T ThrowIfNot<T>(this T argument, Func<T, bool> condition, Exception exception) =>
+			condition(argument) ? argument : throw exception;
 	}
 }
