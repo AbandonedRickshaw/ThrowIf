@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>AbandonedRickshaw.ThrowIf</Title>
@@ -15,8 +16,11 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Guard;AR;AbandonedRickshaw;ThrowIf</PackageTags>
     <PackageId>AbandonedRickshaw.ThrowIf</PackageId>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Upgraded for .net 6</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT-0</PackageLicenseExpression>
   </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\README.md">
       <Pack>True</Pack>
@@ -24,7 +28,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Update="LICENSE" Pack="True" PackagePath="\" />
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-
 </Project>
