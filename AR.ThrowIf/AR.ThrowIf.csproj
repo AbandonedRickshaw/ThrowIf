@@ -3,6 +3,28 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>AbandonedRickshaw.ThrowIf</Title>
+    <Authors>Brent Bordelon (TadGhostal)</Authors>
+    <Company>AbandonedRickshaw</Company>
+    <Description>Basic, fluent guard clauses</Description>
+    <Copyright>2022</Copyright>
+    <PackageProjectUrl>https://github.com/AbandonedRickshaw/ThrowIf</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/AbandonedRickshaw/ThrowIf</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Guard;AR;AbandonedRickshaw;ThrowIf</PackageTags>
+    <PackageId>AbandonedRickshaw.ThrowIf</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="LICENSE" Pack="True" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

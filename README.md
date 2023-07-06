@@ -4,7 +4,7 @@ A set of basic, fluent validation extensions.  Each is set up to to throw an app
 - Works with value, reference, nullable variables
 - Can be chained (fluent) for multiple tests or "on the fly" testing.
 
-Basic usage:
+## Basic usage
 
 Generally each extension takes the following:
 
@@ -15,7 +15,7 @@ Generally each extension takes the following:
 
 
 
-Examples
+## Examples
 
 ```c#
 // sets a variable if within range, otherwise throws an ArgumentOutOfRangeException.  Works for any IComparable
