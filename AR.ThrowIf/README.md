@@ -10,7 +10,7 @@ Generally each extension takes the following:
 
 - The argument to test.
 - optional parameters to test against (min and max values for range, for instance).
-- optional name of the variable to be used when throwing ArgumentException.
+- optional name of the argument when throwing ArgumentException.
 - optional exception to throw if test fails, in case ArgumentException won't cut it.
 
 
